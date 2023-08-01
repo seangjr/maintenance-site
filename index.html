@@ -101,6 +101,31 @@
         isDrawing = false;
         clearCanvas();
       });
+
+      //add mobile touch support
+      canvas.addEventListener("touchstart", (e) => {
+        isDrawing = true;
+        [lastX, lastY] = [e.offsetX, e.offsetY];
+      });
+
+      canvas.addEventListener("touchmove", draw);
+
+      canvas.addEventListener("touchend", () => {
+        isDrawing = false;
+        clearCanvas();
+      });
+
+      canvas.addEventListener("touchcancel", () => {
+        isDrawing = false;
+        clearCanvas();
+      });
+
+      canvas.addEventListener("touchleave", () => {
+        isDrawing = false;
+        clearCanvas();
+      });
+
+
     </script>
   </body>
 </html>
